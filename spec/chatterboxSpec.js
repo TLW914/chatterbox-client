@@ -66,6 +66,7 @@ describe('chatterbox', function() {
 
   describe('chatroom behavior', function() {
     it('should be able to add messages to the DOM', function() {
+      debugger;
       var message = {
         username: 'Mel Brooks',
         text: 'Never underestimate the power of the Schwartz!',
@@ -105,7 +106,7 @@ describe('chatterbox', function() {
 
       App.initialize();
       $('#rooms').find('button').trigger('click');
-      expect(Rooms.length).to.equal(1);
+      expect(Rooms.add).to.be.called;
 
       window.prompt = prompt;
       Rooms.add.restore();

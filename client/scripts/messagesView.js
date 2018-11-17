@@ -9,14 +9,10 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
-    if (!message.username) {
-      message.username = 'Anonymous';
+    if (message.username && message.text) {
+      var formatMessage = _.template("<div class = 'messageBox'><div class = 'username'><b><%- username %></b></div><br><div class = 'message'><%- text %></div></div><br>");
+      var formattedMessage = formatMessage(message);
+      this.$chats.append(formattedMessage);      
     }
-    if (!message.text) {
-      message.text = 'No message declared.';
-    }
-    var formatMessage = _.template("<div id = 'message'><b><%- username %></b><br><%- text %></div>");
-    var formattedMessage = formatMessage(message);
-    this.$chats.append(formattedMessage);
   }
 };
