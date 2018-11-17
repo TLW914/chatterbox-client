@@ -14,7 +14,6 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-
   },
 
   fetch: function(callback = ()=>{}) {
@@ -23,6 +22,7 @@ var App = {
       // console.log(data);
       messages = data.results;
       _.each(messages, function(message) {
+        MessagesView.renderMessage(message);
         if (!Rooms.includes(message.roomname)) {
           Rooms.push(message.roomname);
           var roomName = document.createElement("option");

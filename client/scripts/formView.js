@@ -7,11 +7,10 @@ var FormView = {
   },
 
   handleSubmit: function(event) {
-    var user = window.location.search.substring(10, window.location.search.length);
+    var user = App.username;
     var message = $("#message").val();
     var room = $("#roomSelector :selected").text();
     var messageObject = {username: user, text: message, roomname: room};
-    console.log(messageObject);
     Parse.create(messageObject);
   },
 
