@@ -13,8 +13,10 @@ var MessagesView = {
       var formatMessage = _.template("<div class = 'messageBox'><div class = 'username'><b><%- username %></b></div><br><div class = 'message'><%- text %></div></div>");
       var formattedMessage = formatMessage(message);
       this.$chats.append(formattedMessage);
-      $('.username').on('click', function() {
-        Friends.toggleStatus($('.username').text());
+      $('.username').off('click').on('click', function(event) {
+        if (!Friends.friendList.includes($(event.target).text())) {
+          Friends.toggleStatus($(event.target).text());
+        }
       });
     }
   }
