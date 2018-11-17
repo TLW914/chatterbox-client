@@ -20,8 +20,8 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       // console.log(data);
-      messages = data.results;
-      _.each(messages, function(message) {
+      Messages = data.results;
+      _.each(Messages, function(message) {
         MessagesView.renderMessage(message);
         if (!Rooms.includes(message.roomname)) {
           Rooms.push(message.roomname);
@@ -30,7 +30,7 @@ var App = {
           document.getElementById("roomSelector").add(roomName);
         }
       });
-      callback();
+    callback();
     });
   },
 

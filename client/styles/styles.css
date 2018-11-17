@@ -69,6 +69,10 @@ form input[type=text] {
     font-weight: 800;
 }
 
+.username:hover {
+    color: gray;
+}
+
 .chat:hover {
     background-color: #ddd;
 }
@@ -84,8 +88,11 @@ form input[type=text] {
 }
 
 .friend {
-    color: #fff;
-    background-color: #0090da;
+    color: red/*rgb(135, 255, 151)*/;
+}
+
+.message {
+    word-wrap: break-word;
 }
 
 .messageBox {
