@@ -9,7 +9,7 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
-    if (message.username && message.text) {
+    if (message.username && message.text && message.roomname === $('#roomSelector').val()) {
       var formatMessage = _.template(`<div class = 'messageBox'><div class = 'username ${message.username}'>@<%- username %></div><br><div class = 'message'><%- text %></div></div>`);
       var formattedMessage = formatMessage(message);
       this.$chats.append(formattedMessage);

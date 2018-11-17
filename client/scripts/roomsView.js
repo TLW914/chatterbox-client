@@ -6,6 +6,7 @@ var RoomsView = {
 
   initialize: function() {
     RoomsView.$addRoom.on('click', RoomsView.handleAddRoom);
+    $('#roomSelector').on('change', RoomsView.handleChangeRoom);
   },
 
   render: function() {
@@ -23,6 +24,11 @@ var RoomsView = {
     roomName.text = $("#addRoomName").val();
     Rooms.push(roomName.text);
     document.getElementById("roomSelector").add(roomName);
+  },
+  
+  handleChangeRoom: function() {
+    $('#chats').empty();
+    App.fetch();
   }
 
 };
