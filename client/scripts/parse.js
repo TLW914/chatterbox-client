@@ -1,6 +1,6 @@
 var Parse = {
 
-  server: `http://parse.sfm8.hackreactor.com/chatterbox/classes/messages`,
+  server: `http://parse.${window.CAMPUS}.hackreactor.com/chatterbox/classes/messages`,
 
   create: function(message, successCB, errorCB = null) {
     $.ajax({
