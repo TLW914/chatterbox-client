@@ -10,7 +10,7 @@ var MessageView = {
     `),
 
   renderMessage: function (message) {
-    var formatMessage = _.template("<div><b><%- username %></b><br><%- text %></div>");
+    var formatMessage = _.template("<div class ='chat'><div class='username'><%- username %></b><br><%- text %></div>");
     var formattedMessage = formatMessage(message);
     this.$chats.append(formattedMessage);
   }
