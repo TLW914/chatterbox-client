@@ -7,10 +7,11 @@ var FormView = {
   },
 
   handleSubmit: function(event) {
-    // Stop the browser from submitting the form
-    // event.preventDefault();
-    
-    console.log('click!');
+    var user = window.location.search.substring(10, window.location.search.length);
+    var message = $("#message").val();
+    var room = "test";
+    var messageObject = {username: user, text: message, roomname: room};
+    Parse.create(messageObject);
   },
 
   setStatus: function(active) {

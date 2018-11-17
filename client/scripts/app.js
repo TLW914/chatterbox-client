@@ -20,8 +20,16 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data);
-
+      // console.log(data);
+      messages = data.results;
+      _.each(messages, function(message) {
+        if (!Rooms.includes(message.roomname)) {
+          Rooms.push(message.roomname);
+          var roomName = document.createElement("option");
+          roomName.text = message.roomname;
+          document.getElementById("roomSelector").add(roomName);
+        }
+      });
       callback();
     });
   },
