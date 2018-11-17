@@ -1,18 +1,25 @@
 body {
-    background: #eee;
+    background-image: url("https://images2.alphacoders.com/774/774372.jpg");
     text-align: center;
     padding: 0 25px;
     font-family: arial, sans-serif;
 }
 
+h1 {
+    font-family: 'Charmonman', cursive;
+    margin-left: -40px;
+    color: rgba(0, 255, 221, 0.45)
+}
+
 #main, #chats {
+    background-image: url("https://image.freepik.com/free-vector/grey-abstract-background_1077-4.jpg");
     width: 500px;
     margin: auto;
     text-align: left;
-    background: white;
     padding: 50px 60px;
     border: solid #ddd;
     border-width: 0 1px 1px 1px;
+    border-radius: 25px;
 }
 
 #main h1 {
