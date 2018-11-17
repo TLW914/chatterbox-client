@@ -9,8 +9,9 @@ var FormView = {
   handleSubmit: function(event) {
     var user = window.location.search.substring(10, window.location.search.length);
     var message = $("#message").val();
-    var room = "test";
+    var room = $("#roomSelector :selected").text();
     var messageObject = {username: user, text: message, roomname: room};
+    console.log(messageObject);
     Parse.create(messageObject);
   },
 
