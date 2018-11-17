@@ -10,9 +10,11 @@ var MessagesView = {
 
   renderMessage: function(message) {
     if (message.username && message.text) {
-      var formatMessage = _.template("<div class = 'messageBox'><div class = 'username'><b><%- username %></b></div><br><div class = 'message'><%- text %></div></div><br>");
+      var formatMessage = _.template("<div class = 'messageBox'><div class = 'username'><b><%- username %></b></div><br><div class = 'message'><%- text %></div></div>");
       var formattedMessage = formatMessage(message);
-      this.$chats.append(formattedMessage);      
+      this.$chats.append(formattedMessage);
+      $('.username').on('click', function() {console.log('testing');});
     }
   }
+
 };

@@ -1,8 +1,8 @@
 var Friends = {
   friendList: [],
   
-  toggleStatus: function() {
-    
+  toggleStatus: function(friend) {
+    this.friendList.push(friend);
   }
 
 

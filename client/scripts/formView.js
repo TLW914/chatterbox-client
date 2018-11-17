@@ -15,15 +15,6 @@ var FormView = {
     Parse.create(messageObject);
   },
   
-  // handleSubmitEnter: function(event) {
-  //   // if (key pressed === enter (keycode 13))
-  //   var user = App.username;
-  //   var message = $("#message").val();
-  //   var room = $("#roomSelector :selected").text();
-  //   var messageObject = {username: user, text: message, roomname: room};
-  //   Parse.create(messageObject);
-  // },
-
   setStatus: function(active) {
     var status = active ? 'true' : null;
     FormView.$form.find('input[type=submit]').attr('disabled', status);
